@@ -1,3 +1,4 @@
-# Strapi application
+# Bookmarks Strapi
 
-A quick description of your strapi application
+This Strapi application provides an API and backoffice for handling your bookmarks.
+This goes with a chrome extension which synchronize the bookmarks in a directory
