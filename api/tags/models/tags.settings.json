@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "name": "Tags",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "bookmarks": {
+      "via": "tags",
+      "collection": "bookmarks"
+    },
+    "tags_category": {
+      "via": "tags",
+      "model": "tags-categories"
+    }
+  }
+}

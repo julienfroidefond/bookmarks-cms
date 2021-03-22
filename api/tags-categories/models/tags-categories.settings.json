@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags_categories",
+  "info": {
+    "name": "Tags categories",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "tags": {
+      "collection": "tags",
+      "via": "tags_category"
+    },
+    "root": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
