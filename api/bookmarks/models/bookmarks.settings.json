@@ -23,8 +23,8 @@
       "unique": true
     },
     "tags": {
-      "collection": "tags",
       "via": "bookmarks",
+      "collection": "tags",
       "dominant": true
     },
     "Description": {

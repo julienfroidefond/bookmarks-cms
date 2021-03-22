@@ -17,10 +17,10 @@
       "unique": true
     },
     "tags": {
-      "collection": "tags",
-      "via": "tags_category"
+      "via": "tags_category",
+      "collection": "tags"
     },
-    "root": {
+    "IsExpanded": {
       "type": "boolean",
       "default": false
     }

@@ -17,12 +17,15 @@
       "required": true
     },
     "bookmarks": {
-      "via": "tags",
-      "collection": "bookmarks"
+      "collection": "bookmarks",
+      "via": "tags"
     },
     "tags_category": {
-      "via": "tags",
-      "model": "tags-categories"
+      "model": "tags-categories",
+      "via": "tags"
+    },
+    "IsExpanded": {
+      "type": "boolean"
     }
   }
 }

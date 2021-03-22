@@ -553,6 +553,9 @@
                 "tags_category": {
                   "type": "string"
                 },
+                "IsExpanded": {
+                  "type": "boolean"
+                },
                 "created_by": {
                   "type": "string"
                 },
