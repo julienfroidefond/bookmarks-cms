@@ -1,5 +1,5 @@
 module.exports = ({ env }) => {
-  return env("DATABASE_TYPE", "sqlite") === "sqlite"
+  return env("DATABASE_TYPE", "sqlite") === "sqlit"
     ? {
         defaultConnection: "default",
         connections: {
