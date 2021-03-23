@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "03/22/2021 5:29:27 PM"
+    "x-generation-date": "03/23/2021 9:41:29 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3823,17 +3823,17 @@
       "Bookmarks": {
         "required": [
           "id",
-          "Titre",
-          "Url"
+          "title",
+          "url"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "Titre": {
+          "title": {
             "type": "string"
           },
-          "Url": {
+          "url": {
             "type": "string"
           },
           "tags": {
@@ -3841,13 +3841,13 @@
             "items": {
               "required": [
                 "id",
-                "Name"
+                "name"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "Name": {
+                "name": {
                   "type": "string"
                 },
                 "bookmarks": {
@@ -3859,7 +3859,7 @@
                 "tags_category": {
                   "type": "string"
                 },
-                "IsExpanded": {
+                "isExpanded": {
                   "type": "boolean"
                 },
                 "created_by": {
@@ -3871,21 +3871,21 @@
               }
             }
           },
-          "Description": {
+          "description": {
             "type": "string"
           }
         }
       },
       "NewBookmarks": {
         "required": [
-          "Titre",
-          "Url"
+          "title",
+          "url"
         ],
         "properties": {
-          "Titre": {
+          "title": {
             "type": "string"
           },
-          "Url": {
+          "url": {
             "type": "string"
           },
           "tags": {
@@ -3894,7 +3894,7 @@
               "type": "string"
             }
           },
-          "Description": {
+          "description": {
             "type": "string"
           },
           "created_by": {
@@ -3908,13 +3908,13 @@
       "Tags-categories": {
         "required": [
           "id",
-          "Name"
+          "name"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "Name": {
+          "name": {
             "type": "string"
           },
           "tags": {
@@ -3922,13 +3922,13 @@
             "items": {
               "required": [
                 "id",
-                "Name"
+                "name"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "Name": {
+                "name": {
                   "type": "string"
                 },
                 "bookmarks": {
@@ -3940,7 +3940,7 @@
                 "tags_category": {
                   "type": "string"
                 },
-                "IsExpanded": {
+                "isExpanded": {
                   "type": "boolean"
                 },
                 "created_by": {
@@ -3952,7 +3952,7 @@
               }
             }
           },
-          "IsExpanded": {
+          "isExpanded": {
             "type": "boolean",
             "default": false
           }
@@ -3960,10 +3960,10 @@
       },
       "NewTags-categories": {
         "required": [
-          "Name"
+          "name"
         ],
         "properties": {
-          "Name": {
+          "name": {
             "type": "string"
           },
           "tags": {
@@ -3972,7 +3972,7 @@
               "type": "string"
             }
           },
-          "IsExpanded": {
+          "isExpanded": {
             "type": "boolean",
             "default": false
           },
@@ -3987,13 +3987,13 @@
       "Tags": {
         "required": [
           "id",
-          "Name"
+          "name"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "Name": {
+          "name": {
             "type": "string"
           },
           "bookmarks": {
@@ -4001,17 +4001,17 @@
             "items": {
               "required": [
                 "id",
-                "Titre",
-                "Url"
+                "title",
+                "url"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "Titre": {
+                "title": {
                   "type": "string"
                 },
-                "Url": {
+                "url": {
                   "type": "string"
                 },
                 "tags": {
@@ -4020,7 +4020,7 @@
                     "type": "string"
                   }
                 },
-                "Description": {
+                "description": {
                   "type": "string"
                 },
                 "created_by": {
@@ -4035,13 +4035,13 @@
           "tags_category": {
             "required": [
               "id",
-              "Name"
+              "name"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "Name": {
+              "name": {
                 "type": "string"
               },
               "tags": {
@@ -4050,7 +4050,7 @@
                   "type": "string"
                 }
               },
-              "IsExpanded": {
+              "isExpanded": {
                 "type": "boolean"
               },
               "created_by": {
@@ -4061,17 +4061,17 @@
               }
             }
           },
-          "IsExpanded": {
+          "isExpanded": {
             "type": "boolean"
           }
         }
       },
       "NewTags": {
         "required": [
-          "Name"
+          "name"
         ],
         "properties": {
-          "Name": {
+          "name": {
             "type": "string"
           },
           "bookmarks": {
@@ -4083,7 +4083,7 @@
           "tags_category": {
             "type": "string"
           },
-          "IsExpanded": {
+          "isExpanded": {
             "type": "boolean"
           },
           "created_by": {

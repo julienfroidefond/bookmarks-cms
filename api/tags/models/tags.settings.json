@@ -11,7 +11,7 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "unique": true,
       "required": true
@@ -21,10 +21,10 @@
       "via": "tags"
     },
     "tags_category": {
-      "model": "tags-categories",
-      "via": "tags"
+      "via": "tags",
+      "model": "tags-categories"
     },
-    "IsExpanded": {
+    "isExpanded": {
       "type": "boolean"
     }
   }
