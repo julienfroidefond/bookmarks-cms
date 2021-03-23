@@ -11,16 +11,16 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "required": true,
       "unique": true
     },
     "tags": {
-      "via": "tags_category",
-      "collection": "tags"
+      "collection": "tags",
+      "via": "tags_category"
     },
-    "IsExpanded": {
+    "isExpanded": {
       "type": "boolean",
       "default": false
     }

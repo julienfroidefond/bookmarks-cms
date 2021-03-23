@@ -530,13 +530,13 @@
       "Tags-categories": {
         "required": [
           "id",
-          "Name"
+          "name"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "Name": {
+          "name": {
             "type": "string"
           },
           "tags": {
@@ -544,13 +544,13 @@
             "items": {
               "required": [
                 "id",
-                "Name"
+                "name"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "Name": {
+                "name": {
                   "type": "string"
                 },
                 "bookmarks": {
@@ -562,7 +562,7 @@
                 "tags_category": {
                   "type": "string"
                 },
-                "IsExpanded": {
+                "isExpanded": {
                   "type": "boolean"
                 },
                 "created_by": {
@@ -574,7 +574,7 @@
               }
             }
           },
-          "IsExpanded": {
+          "isExpanded": {
             "type": "boolean",
             "default": false
           }
@@ -582,10 +582,10 @@
       },
       "NewTags-categories": {
         "required": [
-          "Name"
+          "name"
         ],
         "properties": {
-          "Name": {
+          "name": {
             "type": "string"
           },
           "tags": {
@@ -594,7 +594,7 @@
               "type": "string"
             }
           },
-          "IsExpanded": {
+          "isExpanded": {
             "type": "boolean",
             "default": false
           },

@@ -517,13 +517,13 @@
       "Tags": {
         "required": [
           "id",
-          "Name"
+          "name"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "Name": {
+          "name": {
             "type": "string"
           },
           "bookmarks": {
@@ -531,17 +531,17 @@
             "items": {
               "required": [
                 "id",
-                "Titre",
-                "Url"
+                "title",
+                "url"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "Titre": {
+                "title": {
                   "type": "string"
                 },
-                "Url": {
+                "url": {
                   "type": "string"
                 },
                 "tags": {
@@ -550,7 +550,7 @@
                     "type": "string"
                   }
                 },
-                "Description": {
+                "description": {
                   "type": "string"
                 },
                 "created_by": {
@@ -565,13 +565,13 @@
           "tags_category": {
             "required": [
               "id",
-              "Name"
+              "name"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "Name": {
+              "name": {
                 "type": "string"
               },
               "tags": {
@@ -580,7 +580,7 @@
                   "type": "string"
                 }
               },
-              "IsExpanded": {
+              "isExpanded": {
                 "type": "boolean"
               },
               "created_by": {
@@ -591,17 +591,17 @@
               }
             }
           },
-          "IsExpanded": {
+          "isExpanded": {
             "type": "boolean"
           }
         }
       },
       "NewTags": {
         "required": [
-          "Name"
+          "name"
         ],
         "properties": {
-          "Name": {
+          "name": {
             "type": "string"
           },
           "bookmarks": {
@@ -613,7 +613,7 @@
           "tags_category": {
             "type": "string"
           },
-          "IsExpanded": {
+          "isExpanded": {
             "type": "boolean"
           },
           "created_by": {
