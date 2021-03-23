@@ -21,11 +21,12 @@
       "via": "tags"
     },
     "tags_category": {
-      "via": "tags",
-      "model": "tags-categories"
+      "model": "tags-categories",
+      "via": "tags"
     },
     "isExpanded": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     }
   }
 }

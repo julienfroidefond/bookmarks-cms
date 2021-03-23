@@ -592,7 +592,8 @@
             }
           },
           "isExpanded": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -614,7 +615,8 @@
             "type": "string"
           },
           "isExpanded": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"

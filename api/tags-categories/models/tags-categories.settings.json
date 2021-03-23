@@ -17,8 +17,8 @@
       "unique": true
     },
     "tags": {
-      "collection": "tags",
-      "via": "tags_category"
+      "via": "tags_category",
+      "collection": "tags"
     },
     "isExpanded": {
       "type": "boolean",
