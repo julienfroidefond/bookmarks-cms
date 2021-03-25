@@ -2,7 +2,7 @@
   "name": "bookmarks",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "Strapi bookmarks CMS",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -28,7 +28,7 @@
     "strapi-utils": "3.5.3"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Julien Froidefond"
   },
   "strapi": {
     "uuid": "64b5a452-020e-499f-a76c-3677d56fac9d"
