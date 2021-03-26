@@ -1,5 +1,10 @@
 # Bookmarks CMS
 
+![screenshot](./admin/src/assets/images/logo_strapi.png)
+
+
+## Intro
+
 The goal of this project is a self hosted server for bookmarks sharing. You can share with your teams or family a collection of bookmarks.
 
 This Strapi application provides an API and backoffice for handling your bookmarks. Users needs a client to consume this API (cf Clients).
