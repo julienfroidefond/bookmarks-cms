@@ -1,4 +1,9 @@
-# Bookmarks Strapi
+# Bookmarks CMS
+
+![screenshot](./admin/src/assets/images/logo_strapi.png)
+
+
+## Intro
 
 The goal of this project is a self hosted server for bookmarks sharing. You can share with your teams or family a collection of bookmarks.
 
@@ -19,7 +24,11 @@ Demo site : https://bookmarks-cms.herokuapp.com/
 
 ## Clients
 
-- chrome extension : https://chrome.google.com/webstore/detail/strapi-bookmarks/oobifkfbojcheinmoejdhgllgennkjpe?hl=fr
+- chrome extension : https://chrome.google.com/webstore/detail/strapi-bookmarks/oobifkfbojcheinmoejdhgllgennkjpe?hl=fr (source code : https://github.com/julienfroidefond/strapi-bookmarks)
 - Confluence : todo
 - Firefox extension : todo
 - ...
+
+# Roadmap
+
+- [] moving to a model with a hierarchical system of directories (exit tag categories and isExpanded; but ok with tags)
