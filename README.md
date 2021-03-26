@@ -19,7 +19,7 @@ Demo site : https://bookmarks-cms.herokuapp.com/
 
 ## Clients
 
-- chrome extension : https://chrome.google.com/webstore/detail/strapi-bookmarks/oobifkfbojcheinmoejdhgllgennkjpe?hl=fr
+- chrome extension : https://chrome.google.com/webstore/detail/strapi-bookmarks/oobifkfbojcheinmoejdhgllgennkjpe?hl=fr (source code : https://github.com/julienfroidefond/strapi-bookmarks)
 - Confluence : todo
 - Firefox extension : todo
 - ...
