@@ -26,4 +26,4 @@ Demo site : https://bookmarks-cms.herokuapp.com/
 
 # Roadmap
 
-- [] moving to a model with a hierarchical system of directories (exit tag categories; but ok with tags)
+- [] moving to a model with a hierarchical system of directories (exit tag categories and isExpanded; but ok with tags)
