@@ -1,0 +1,19 @@
+name: release
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run a one-line script
+        run: yarn && yarn build
+        
+      - name: Update version in package.json
+        uses: maks-stupak/gh-action-bump-version@v7.1.5
