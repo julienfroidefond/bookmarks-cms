@@ -15,5 +15,8 @@ jobs:
       - name: Run a one-line script
         run: yarn && yarn build
         
-      - name: Update version in package.json
-        uses: maks-stupak/gh-action-bump-version@v7.1.5
+      - name: Conventional Changelog Action
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          version-file: ./package.json
