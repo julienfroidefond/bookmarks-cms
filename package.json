@@ -9,7 +9,9 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cz-conventional-changelog": "3.3.0"
+  },
   "dependencies": {
     "@purest/config": "1.0.1",
     "@request/api": "0.6.0",
@@ -37,5 +39,10 @@
     "node": ">=10.16.0 <=14.x.x",
     "npm": "^7.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

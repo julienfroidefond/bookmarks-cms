@@ -2,8 +2,11 @@ name: release
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   workflow_dispatch:
+    paths-ignore:
+      - "package.json"
+      - "CHANGELOG.md"
 
 jobs:
   build:
@@ -14,9 +17,10 @@ jobs:
 
       - name: Run a one-line script
         run: yarn && yarn build
-        
+
       - name: Conventional Changelog Action
         uses: TriPSs/conventional-changelog-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          git-message: "chore(release): {version}"
           version-file: ./package.json
