@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/bookmarks": {
+    "/folders": {
       "get": {
         "deprecated": false,
-        "description": "Find all the bookmarks's records",
+        "description": "Find all the folders's records",
         "responses": {
           "200": {
-            "description": "Retrieve bookmarks document(s)",
+            "description": "Retrieve folders document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Bookmarks"
+                    "$ref": "#/components/schemas/Folders"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Bookmarks"
+          "Folders"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new bookmarks record",
+        "description": "Create a new folders record",
         "responses": {
           "200": {
-            "description": "Retrieve bookmarks document(s)",
+            "description": "Retrieve folders document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Bookmarks"
+                  "$ref": "#/components/schemas/Folders"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Bookmarks"
+          "Folders"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewBookmarks"
+                "$ref": "#/components/schemas/NewFolders"
               }
             }
           }
         }
       }
     },
-    "/bookmarks/count": {
+    "/folders/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of bookmarks documents",
+        "description": "Retrieve the numver of folders documents",
         "responses": {
           "200": {
-            "description": "Retrieve bookmarks document(s)",
+            "description": "Retrieve folders document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Bookmarks"
+          "Folders"
         ],
         "parameters": []
       }
     },
-    "/bookmarks/{id}": {
+    "/folders/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one bookmarks record",
+        "description": "Find one folders record",
         "responses": {
           "200": {
-            "description": "Retrieve bookmarks document(s)",
+            "description": "Retrieve folders document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Bookmarks"
+                  "$ref": "#/components/schemas/Folders"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Bookmarks"
+          "Folders"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single bookmarks record",
+        "description": "Update a single folders record",
         "responses": {
           "200": {
-            "description": "Retrieve bookmarks document(s)",
+            "description": "Retrieve folders document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Bookmarks"
+                  "$ref": "#/components/schemas/Folders"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Bookmarks"
+          "Folders"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewBookmarks"
+                "$ref": "#/components/schemas/NewFolders"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single bookmarks record",
+        "description": "Delete a single folders record",
         "responses": {
           "200": {
-            "description": "deletes a single bookmarks based on the ID supplied",
+            "description": "deletes a single folders based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Bookmarks"
+          "Folders"
         ],
         "parameters": [
           {
@@ -514,47 +514,49 @@
   },
   "components": {
     "schemas": {
-      "Bookmarks": {
+      "Folders": {
         "required": [
-          "id",
-          "title",
-          "url"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "title": {
+          "name": {
             "type": "string"
           },
-          "url": {
-            "type": "string"
-          },
-          "tags": {
+          "bookmarks": {
             "type": "array",
             "items": {
               "required": [
                 "id",
-                "name"
+                "title",
+                "url"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "name": {
+                "title": {
                   "type": "string"
                 },
-                "bookmarks": {
+                "url": {
+                  "type": "string"
+                },
+                "tags": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
                 },
-                "tags_category": {
+                "description": {
                   "type": "string"
                 },
-                "isExpanded": {
-                  "type": "boolean"
+                "folders": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "created_by": {
                   "type": "string"
@@ -565,68 +567,49 @@
               }
             }
           },
-          "description": {
-            "type": "string"
-          },
-          "folders": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "bookmarks": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "parent": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "parent": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "bookmarks": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "parent": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           }
         }
       },
-      "NewBookmarks": {
-        "required": [
-          "title",
-          "url"
-        ],
+      "NewFolders": {
         "properties": {
-          "title": {
+          "name": {
             "type": "string"
           },
-          "url": {
-            "type": "string"
-          },
-          "tags": {
+          "bookmarks": {
             "type": "array",
             "items": {
               "type": "string"
             }
           },
-          "description": {
+          "parent": {
             "type": "string"
-          },
-          "folders": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "created_by": {
             "type": "string"
@@ -640,7 +623,7 @@
   },
   "tags": [
     {
-      "name": "Bookmarks"
+      "name": "Folders"
     }
   ]
 }

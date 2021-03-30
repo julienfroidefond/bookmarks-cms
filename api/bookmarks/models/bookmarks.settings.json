@@ -29,6 +29,10 @@
     },
     "description": {
       "type": "text"
+    },
+    "folders": {
+      "via": "bookmarks",
+      "collection": "folders"
     }
   }
 }

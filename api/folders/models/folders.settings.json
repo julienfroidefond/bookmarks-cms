@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "folders",
+  "info": {
+    "name": "Folders",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "bookmarks": {
+      "collection": "bookmarks",
+      "via": "folders",
+      "dominant": true
+    },
+    "parent": {
+      "model": "folders"
+    }
+  }
+}

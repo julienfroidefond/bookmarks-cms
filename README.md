@@ -2,7 +2,6 @@
 
 ![screenshot](./admin/src/assets/images/logo_strapi.png)
 
-
 ## Intro
 
 The goal of this project is a self hosted server for bookmarks sharing. You can share with your teams or family a collection of bookmarks.
@@ -14,6 +13,7 @@ Models :
 - Bookmarks : a title and an url. Can affect to several tags. The bookmark data.
 - Tags : a title. Can be affected to a unique category. Tags are categorization of bookmarks
 - Tag categories : a title. Categories are a group of tags.
+- Folders : hierarchical view (handling a visual tree). Has a name, parent folder and bookmarks.
 
 ## Testing on Heroku
 
