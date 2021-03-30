@@ -553,6 +553,12 @@
                 "description": {
                   "type": "string"
                 },
+                "folders": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "created_by": {
                   "type": "string"
                 },
