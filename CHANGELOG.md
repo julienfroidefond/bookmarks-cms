@@ -1,4 +1,13 @@
-## 1.0.1 (2021-03-28)
+# [1.1.0](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.0.1...v1.1.0) (2021-03-30)
+
+
+### Features
+
+* folders model creation ([1326cfd](https://github.com/julienfroidefond/bookmarks-cms/commit/1326cfd7542ddfc2f9dd977445e4322b1b3a1059)), closes [#12](https://github.com/julienfroidefond/bookmarks-cms/issues/12)
+
+
+
+## [1.0.1](https://github.com/julienfroidefond/bookmarks-cms/compare/952c926cd254ca65d1226ea5ea90885c89a8a9ba...v1.0.1) (2021-03-28)
 
 
 ### Bug Fixes
