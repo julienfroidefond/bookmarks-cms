@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.1.0...v1.2.0) (2021-04-02)
+
+
+### Bug Fixes
+
+* **folders:** sanitize before ([09317cf](https://github.com/julienfroidefond/bookmarks-cms/commit/09317cf251ae3d3a76fa2d156e9679152c4d9297))
+
+
+### Features
+
+* **folders:** tree Api ([e09c61e](https://github.com/julienfroidefond/bookmarks-cms/commit/e09c61e3c18141050d716defe705c08a259682f4))
+
+
+
 # [1.1.0](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.0.1...v1.1.0) (2021-03-30)
 
 
