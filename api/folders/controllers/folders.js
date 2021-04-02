@@ -1,8 +1,30 @@
-'use strict';
+"use strict";
 
-/**
- * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#core-controllers)
- * to customize this controller
- */
+const { sanitizeEntity } = require("strapi-utils");
 
-module.exports = {};
+module.exports = {
+  async tree(ctx) {
+    let entities = await strapi.services.folders.find();
+    let tree = [];
+    for (const i in entities) {
+      const entity = entities[i];
+      tree[entity.id] = entity;
+    }
+    for (const i in entities) {
+      const entity = entities[i];
+      const { parent } = entity;
+      if (parent) {
+        if (!tree[parent.id].children) tree[parent.id].children = [];
+        tree[parent.id].children.push(entity);
+      }
+    }
+    let result = [];
+    for (const i in tree) {
+      const branch = tree[i];
+      if (!branch.parent) result.push(branch);
+    }
+    return result.map((entity) =>
+      sanitizeEntity(entity, { model: strapi.models.folders })
+    );
+  },
+};
