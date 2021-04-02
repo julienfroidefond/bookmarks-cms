@@ -13,7 +13,7 @@ module.exports = {
     const { tag_id_in } = ctx.query;
     let bookmarksFiltered = [];
     if (tag_id_in) {
-      const tags = eval(tag_id_in);
+      const tags = tag_id_in.split(',');
       let tagsEntities = await strapi.services.tags.find({ id_in: tags });
       tagsEntities = tagsEntities.map((entity) =>
         sanitizeEntity(entity, { model: strapi.models.tags })
