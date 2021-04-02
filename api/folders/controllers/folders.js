@@ -11,7 +11,6 @@ module.exports = {
     );
 
     const { tag_id_in } = ctx.query;
-    // let bookmarksFiltered = [];
     const bookmarksFilteredIds = new Set();
     if (tag_id_in) {
       const tags = tag_id_in.split(',');
@@ -22,13 +21,9 @@ module.exports = {
       tagsEntities.forEach((tagEntity) => {
         tagEntity.bookmarks.forEach((bookmark) => {
           bookmarksFilteredIds.add(bookmark.id);
-          // bookmarksFiltered[bookmark.id] = bookmark;
         });
       });
     }
-    // const bookmarksFilteredId = bookmarksFiltered.map((bookmark) => {
-    //   return bookmark.id;
-    // });
     foldersEntities = foldersEntities.map((entity) => {
       entity.bookmarks = entity.bookmarks.filter(
         (bookmark) => !bookmarksFilteredIds.has(bookmark.id)
