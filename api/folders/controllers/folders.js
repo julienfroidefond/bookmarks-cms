@@ -5,6 +5,9 @@ const { sanitizeEntity } = require("strapi-utils");
 module.exports = {
   async tree(ctx) {
     let entities = await strapi.services.folders.find();
+    entities = entities.map((entity) =>
+      sanitizeEntity(entity, { model: strapi.models.folders })
+    );
     let tree = [];
     for (const i in entities) {
       const entity = entities[i];
@@ -23,8 +26,6 @@ module.exports = {
       const branch = tree[i];
       if (!branch.parent) result.push(branch);
     }
-    return result.map((entity) =>
-      sanitizeEntity(entity, { model: strapi.models.folders })
-    );
+    return result;
   },
 };
