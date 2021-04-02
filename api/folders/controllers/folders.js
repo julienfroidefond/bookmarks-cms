@@ -4,28 +4,51 @@ const { sanitizeEntity } = require("strapi-utils");
 
 module.exports = {
   async tree(ctx) {
-    let entities = await strapi.services.folders.find();
-    entities = entities.map((entity) =>
+    let foldersEntities = await strapi.services.folders.find();
+
+    foldersEntities = foldersEntities.map((entity) =>
       sanitizeEntity(entity, { model: strapi.models.folders })
     );
-    let tree = [];
-    for (const i in entities) {
-      const entity = entities[i];
-      tree[entity.id] = entity;
+
+    const { tag_id_in } = ctx.query;
+    let bookmarksFiltered = [];
+    if (tag_id_in) {
+      const tags = eval(tag_id_in);
+      let tagsEntities = await strapi.services.tags.find({ id_in: tags });
+      tagsEntities = tagsEntities.map((entity) =>
+        sanitizeEntity(entity, { model: strapi.models.tags })
+      );
+      tagsEntities.forEach((tagEntity) => {
+        tagEntity.bookmarks.forEach((bookmark) => {
+          bookmarksFiltered[bookmark.id] = bookmark;
+        });
+      });
     }
-    for (const i in entities) {
-      const entity = entities[i];
+    const bookmarksFilteredId = bookmarksFiltered.map((bookmark) => {
+      return bookmark.id;
+    });
+    foldersEntities = foldersEntities.map((entity) => {
+      entity.bookmarks = entity.bookmarks.filter(
+        (bookmark) => !bookmarksFilteredId.includes(bookmark.id)
+      );
+      return entity;
+    });
+
+    let tree = [];
+    foldersEntities.forEach((entity) => {
+      tree[entity.id] = entity;
+    });
+    foldersEntities.forEach((entity) => {
       const { parent } = entity;
       if (parent) {
         if (!tree[parent.id].children) tree[parent.id].children = [];
         tree[parent.id].children.push(entity);
       }
-    }
+    });
     let result = [];
-    for (const i in tree) {
-      const branch = tree[i];
-      if (!branch.parent) result.push(branch);
-    }
+    tree.forEach((entity) => {
+      if (!entity.parent) result.push(entity);
+    });
     return result;
   },
 };
