@@ -10,7 +10,7 @@ module.exports = {
       sanitizeEntity(entity, { model: strapi.models.folders })
     );
 
-    const { tag_id_in } = ctx.query;
+    const { tag_id_in, no_empty_folders } = ctx.query;
     const bookmarksFilteredIds = new Set();
     if (tag_id_in) {
       const tags = tag_id_in.split(',');
@@ -33,15 +33,16 @@ module.exports = {
 
     let tree = [];
     foldersEntities.forEach((entity) => {
+      entity.children = [];
       tree[entity.id] = entity;
     });
     foldersEntities.forEach((entity) => {
       const { parent } = entity;
-      if (parent) {
-        if (!tree[parent.id].children) tree[parent.id].children = [];
-        tree[parent.id].children.push(entity);
+      if (parent && (no_empty_folders && entity.bookmarks.length > 0 || !no_empty_folders)) {
+          tree[parent.id].children.push(entity);
       }
     });
+
     let result = [];
     tree.forEach((entity) => {
       if (!entity.parent) result.push(entity);
