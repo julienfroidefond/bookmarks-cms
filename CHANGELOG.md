@@ -1,3 +1,18 @@
+# [1.3.0](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.2.0...v1.3.0) (2021-04-03)
+
+
+### Bug Fixes
+
+* eval killing ([bd5a7e4](https://github.com/julienfroidefond/bookmarks-cms/commit/bd5a7e49816d6b308f21314949429c37737a72df))
+
+
+### Features
+
+* adding new param on tree API : no_empty_folders ([1b3760a](https://github.com/julienfroidefond/bookmarks-cms/commit/1b3760a283a0e032c88e9f6f2ffae23d7b34908e))
+* **folderstree:** adding a parameter tag_id_in to filter by tag ids ([bf7b1d8](https://github.com/julienfroidefond/bookmarks-cms/commit/bf7b1d88a32d80ee6548273cfe6e79b75906f341))
+
+
+
 # [1.2.0](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.1.0...v1.2.0) (2021-04-02)
 
 
