@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/02/2021 4:45:01 PM"
+    "x-generation-date": "04/03/2021 9:12:07 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -864,7 +864,28 @@
         "tags": [
           "Folders"
         ],
-        "parameters": []
+        "parameters": [
+          {
+            "name": "tag_id_in",
+            "in": "query",
+            "required": false,
+            "description": "Filter by tags ids (format : 1,2,3)",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "no_empty_folders",
+            "in": "query",
+            "required": false,
+            "description": "Remove empty folders",
+            "schema": {
+              "type": "boolean"
+            },
+            "deprecated": false
+          }
+        ]
       }
     },
     "/folders/count": {
