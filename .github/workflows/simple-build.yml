@@ -14,4 +14,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run a one-line script
-        run: yarn && yarn build
+        run: yarn && yarn build && yarn test
