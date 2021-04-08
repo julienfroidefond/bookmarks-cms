@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.3.0...v1.4.0) (2021-04-08)
+
+
+### Features
+
+* **foldertree:** hanle orphans ([688f411](https://github.com/julienfroidefond/bookmarks-cms/commit/688f4116d00fdcb6c878906755b672ffb884590e)), closes [#23](https://github.com/julienfroidefond/bookmarks-cms/issues/23)
+
+
+
 # [1.3.0](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.2.0...v1.3.0) (2021-04-03)
 
 
