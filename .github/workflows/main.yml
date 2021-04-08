@@ -19,11 +19,21 @@ jobs:
         run: yarn && yarn build
 
       - name: Conventional Changelog Action
+        id: changelog
         uses: TriPSs/conventional-changelog-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           git-message: "chore(release): {version}"
           version-file: ./package.json
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
+        with:
+          tag: ${{ steps.changelog.outputs.tag }}
+          name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publishing on https://xpclinks.directchezmoi.com/
         uses: wei/curl@master
