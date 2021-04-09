@@ -13,23 +13,36 @@ import React, { memo, Component } from "react";
 import Block from "../../components/Block";
 
 const mapFolderTreeItem = (item) => {
-  const title = item.name;
+  const title = "🗂 " + item.name;
+  const id = item.id;
   let children = [];
   if (item.children) children = item.children.map(mapFolderTreeItem);
   if (item.bookmarks && item.bookmarks.length > 0) {
     const bookmarksTree = item.bookmarks.map((bookmark) => ({
-      title: bookmark.title,
+      title: "📌 " + bookmark.title,
+      id: bookmark.id,
+      type: "bookmark",
     }));
     children.push(...bookmarksTree);
   }
   return {
     title,
     children,
+    type: "folder",
+    id,
   };
 };
 
 const changeTree = (treeData, comp) => {
   comp.setState({ treeData });
+  console.log(treeData);
+};
+
+const onMoveNode = (e) => {
+  console.log(
+    `${e.node.type} with id : ${e.node.id} (${e.node.title}) is moving to folder with id : ${e.nextParentNode.id} (${e.nextParentNode.title})`
+  );
+  //TODO : POST to bookmark
 };
 
 class HomePage extends Component {
@@ -65,6 +78,10 @@ class HomePage extends Component {
             <SortableTree
               treeData={treeData}
               onChange={(treeData) => changeTree(treeData, this)}
+              canDrop={(tree) =>
+                !(tree.nextParent && tree.nextParent.type === "bookmark")
+              }
+              onMoveNode={onMoveNode}
             />
           </Block>
         </div>
