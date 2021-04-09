@@ -5,15 +5,16 @@
  */
 import SortableTree from "react-sortable-tree";
 import "react-sortable-tree/style.css"; // This only needs to be imported once in your app
-import * as strapiHelper from "strapi-helper-plugin";
+import * as StrapiHelper from "strapi-helper-plugin";
 
 import React, { memo, Component } from "react";
 // import PropTypes from 'prop-types';
 
+import Block from "../../components/Block";
+
 const mapFolderTreeItem = (item) => {
   const title = item.name;
   let children = [];
-  console.log(item.name);
   if (item.children) children = item.children.map(mapFolderTreeItem);
   if (item.bookmarks && item.bookmarks.length > 0) {
     const bookmarksTree = item.bookmarks.map((bookmark) => ({
@@ -27,10 +28,13 @@ const mapFolderTreeItem = (item) => {
   };
 };
 
+const changeTree = (treeData, comp) => {
+  comp.setState({ treeData });
+};
+
 class HomePage extends Component {
   componentDidMount() {
-    strapiHelper.request("/folders/tree").then((res) => {
-      console.log(res);
+    StrapiHelper.request("/folders/tree").then((res) => {
       const foldersTree = res.map((item) => {
         return mapFolderTreeItem(item);
       });
@@ -40,25 +44,31 @@ class HomePage extends Component {
     });
   }
   state = {
-    treeData: [
-      { title: "Chicken", children: [{ title: "Egg" }, { title: "dazdaz" }] },
-      { title: "coucou" },
-    ],
+    treeData: [],
   };
   render() {
-    // console.log(strapi.plugins)\; // Is there an helper for getting Tree ?
-    // const globalContext = strapiHelper.useGlobalContext();
-    // console.log(globalContext);
-
     const treeData = this.state.treeData;
     return (
-      <div style={{ height: 800 }}>
-        <h1>Tree modifier</h1>
-        <SortableTree
-          treeData={treeData}
-          onChange={(treeData) => this.setState({ treeData })}
+      <StrapiHelper.ContainerFluid>
+        <StrapiHelper.PluginHeader
+          title={"Tree viewer"}
+          description={
+            "Drag and drop nodes to sort and move bookmarks / folders"
+          }
         />
-      </div>
+        <div className="row">
+          <Block
+            title="General"
+            description="Let's drag and drop"
+            style={{ marginBottom: 12, height: 700 }}
+          >
+            <SortableTree
+              treeData={treeData}
+              onChange={(treeData) => changeTree(treeData, this)}
+            />
+          </Block>
+        </div>
+      </StrapiHelper.ContainerFluid>
     );
   }
 }
