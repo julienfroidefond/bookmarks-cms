@@ -55,7 +55,7 @@ module.exports = {
         "bookmarks.id"
       )
       .whereNull("bookmarks_folders__folders_bookmarks.folder_id")
-      .select("*");
+      .select("bookmarks.*");
 
     let result = [];
     tree.forEach((entity) => {

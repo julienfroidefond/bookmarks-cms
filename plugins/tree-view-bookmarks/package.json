@@ -1,0 +1,28 @@
+{
+  "name": "strapi-plugin-tree-view-bookmarks",
+  "version": "1.0.0",
+  "description": "",
+  "strapi": {
+    "name": "tree-view-bookmarks",
+    "icon": "plug",
+    "description": ""
+  },
+  "dependencies": {},
+  "author": {
+    "name": "Julien Froidefond",
+    "email": "julienfroidefond@gmail.com",
+    "url": "http://cdiscount.com"
+  },
+  "maintainers": [
+    {
+      "name": "Julien Froidefond",
+      "email": "julienfroidefond@gmail.com",
+      "url": "http://cdiscount.com"
+    }
+  ],
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
