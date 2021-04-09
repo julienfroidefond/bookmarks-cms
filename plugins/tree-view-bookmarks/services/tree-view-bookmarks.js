@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * tree-view-bookmarks.js service
@@ -7,5 +7,7 @@
  */
 
 module.exports = {
-
+  find() {
+    return "Hello";
+  },
 };
