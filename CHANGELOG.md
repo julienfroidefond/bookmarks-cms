@@ -1,3 +1,22 @@
+# [1.5.0](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.4.0...v1.5.0) (2021-04-09)
+
+
+### Bug Fixes
+
+* knex was sending bad bookmarks ([2e99de9](https://github.com/julienfroidefond/bookmarks-cms/commit/2e99de98a7d25a801170c136bd71ace63c8e67f5))
+
+
+### Features
+
+* adding a plugin for folder tree editable ([37c4345](https://github.com/julienfroidefond/bookmarks-cms/commit/37c434525e2d66637971ccaa7b97de236e40efc4))
+* icons event and no drop under bookmarks ([6161a63](https://github.com/julienfroidefond/bookmarks-cms/commit/6161a633e58e0ac55034325904376630af3c4c89))
+* notifications on actions ([9c74037](https://github.com/julienfroidefond/bookmarks-cms/commit/9c74037849e29269cc799cbfa85b87fe6b258392))
+* pUT on bookmarks and folders ([477940c](https://github.com/julienfroidefond/bookmarks-cms/commit/477940c452c148b8fd91cc48a91c9d38db416f8e))
+* uI upgrade ([55bd892](https://github.com/julienfroidefond/bookmarks-cms/commit/55bd892aad82bff1c7a8230b89e234b9291b503f))
+* **plugintreefolder:** consume folder api and map ([65071e0](https://github.com/julienfroidefond/bookmarks-cms/commit/65071e0d35b1039af005a6cd1b83456a86167a5b))
+
+
+
 # [1.4.0](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.3.0...v1.4.0) (2021-04-08)
 
 
@@ -42,20 +61,6 @@
 ### Features
 
 * folders model creation ([1326cfd](https://github.com/julienfroidefond/bookmarks-cms/commit/1326cfd7542ddfc2f9dd977445e4322b1b3a1059)), closes [#12](https://github.com/julienfroidefond/bookmarks-cms/issues/12)
-
-
-
-## [1.0.1](https://github.com/julienfroidefond/bookmarks-cms/compare/952c926cd254ca65d1226ea5ea90885c89a8a9ba...v1.0.1) (2021-03-28)
-
-
-### Bug Fixes
-
-* **deps:** pin dependencies ([952c926](https://github.com/julienfroidefond/bookmarks-cms/commit/952c926cd254ca65d1226ea5ea90885c89a8a9ba))
-* **deps:** update dependency knex to v0.95.3 ([215cc03](https://github.com/julienfroidefond/bookmarks-cms/commit/215cc032e0a9a244b1679ee0fbae029048681809))
-* **deps:** update dependency knex to v0.95.4 ([e69482f](https://github.com/julienfroidefond/bookmarks-cms/commit/e69482f6b47640ecf85deb89e2b54bcd392067f6))
-* **deps:** update dependency sqlite3 to v5.0.2 ([2f30ac7](https://github.com/julienfroidefond/bookmarks-cms/commit/2f30ac7683d7457cf20b2760126dca16c5a53f8b))
-* **deps:** update strapi monorepo to v3.5.4 ([3688057](https://github.com/julienfroidefond/bookmarks-cms/commit/3688057e4cd343657f16e5f2b20c175a36e21c0f))
-* **deps:** update strapi monorepo to v3.5.4 ([f86a8ce](https://github.com/julienfroidefond/bookmarks-cms/commit/f86a8ce7af755190ad3dcd124b7d50e1a170e56f))
 
 
 
