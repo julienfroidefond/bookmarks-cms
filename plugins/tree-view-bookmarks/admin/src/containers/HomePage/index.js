@@ -4,11 +4,10 @@
  *
  */
 import SortableTree from "react-sortable-tree";
-import "react-sortable-tree/style.css"; // This only needs to be imported once in your app
+import "react-sortable-tree/style.css";
 import * as StrapiHelper from "strapi-helper-plugin";
 
 import React, { memo, Component } from "react";
-// import PropTypes from 'prop-types';
 
 import Block from "../../components/Block";
 
@@ -49,8 +48,6 @@ const onMoveNode = (e) => {
       body: {
         folders: [e.nextParentNode.id],
       },
-    }).then((response) => {
-      console.log(response);
     });
   } else if (e.node.type === "folder") {
     StrapiHelper.request("/folders/" + e.node.id, {
@@ -58,8 +55,6 @@ const onMoveNode = (e) => {
       body: {
         parent: e.nextParentNode.id,
       },
-    }).then((response) => {
-      console.log(response);
     });
   }
 };

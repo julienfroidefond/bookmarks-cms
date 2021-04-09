@@ -1,23 +1,23 @@
 {
   "name": "strapi-plugin-tree-view-bookmarks",
-  "version": "0.0.0",
-  "description": "This is the description of the plugin.",
+  "version": "1.0.0",
+  "description": "",
   "strapi": {
     "name": "tree-view-bookmarks",
     "icon": "plug",
-    "description": "Description of tree-view-bookmarks plugin."
+    "description": ""
   },
   "dependencies": {},
   "author": {
-    "name": "A Strapi developer",
-    "email": "",
-    "url": ""
+    "name": "Julien Froidefond",
+    "email": "julienfroidefond@gmail.com",
+    "url": "http://cdiscount.com"
   },
   "maintainers": [
     {
-      "name": "A Strapi developer",
-      "email": "",
-      "url": ""
+      "name": "Julien Froidefond",
+      "email": "julienfroidefond@gmail.com",
+      "url": "http://cdiscount.com"
     }
   ],
   "engines": {
