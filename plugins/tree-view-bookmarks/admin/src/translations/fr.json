@@ -1,1 +1,5 @@
-{}
+{
+  "notification.success": "Enregistré !",
+  "notification.error": "Oups une erreur est survenue",
+  "plugin.name": "Tree editable view"
+}

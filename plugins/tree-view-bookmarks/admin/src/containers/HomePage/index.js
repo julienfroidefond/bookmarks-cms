@@ -48,14 +48,26 @@ const onMoveNode = (e) => {
       body: {
         folders: [e.nextParentNode.id],
       },
-    });
+    })
+      .then((resp) => {
+        strapi.notification.success("tree-view-bookmarks.notification.success");
+      })
+      .catch((e) => {
+        strapi.notification.error("tree-view-bookmarks.notification.error");
+      });
   } else if (e.node.type === "folder") {
     StrapiHelper.request("/folders/" + e.node.id, {
       method: "PUT",
       body: {
         parent: e.nextParentNode.id,
       },
-    });
+    })
+      .then((resp) => {
+        strapi.notification.success("tree-view-bookmarks.notification.success");
+      })
+      .catch((e) => {
+        strapi.notification.error("tree-view-bookmarks.notification.error");
+      });
   }
 };
 
