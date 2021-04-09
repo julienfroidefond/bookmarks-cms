@@ -35,14 +35,33 @@ const mapFolderTreeItem = (item) => {
 
 const changeTree = (treeData, comp) => {
   comp.setState({ treeData });
-  console.log(treeData);
 };
 
 const onMoveNode = (e) => {
+  console.log(e);
   console.log(
     `${e.node.type} with id : ${e.node.id} (${e.node.title}) is moving to folder with id : ${e.nextParentNode.id} (${e.nextParentNode.title})`
   );
-  //TODO : POST to bookmark
+  if (e.node.id < 0) return;
+  if (e.node.type === "bookmark") {
+    StrapiHelper.request("/bookmarks/" + e.node.id, {
+      method: "PUT",
+      body: {
+        folders: [e.nextParentNode.id],
+      },
+    }).then((response) => {
+      console.log(response);
+    });
+  } else if (e.node.type === "folder") {
+    StrapiHelper.request("/folders/" + e.node.id, {
+      method: "PUT",
+      body: {
+        parent: e.nextParentNode.id,
+      },
+    }).then((response) => {
+      console.log(response);
+    });
+  }
 };
 
 class HomePage extends Component {
