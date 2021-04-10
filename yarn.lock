@@ -9653,7 +9653,7 @@ strapi-generate@3.5.4:
     reportback "^2.0.2"
     strapi-utils "3.5.4"
 
-strapi-helper-plugin@3.5.4, strapi-helper-plugin@^3.5.4:
+strapi-helper-plugin@3.5.4:
   version "3.5.4"
   resolved "https://registry.yarnpkg.com/strapi-helper-plugin/-/strapi-helper-plugin-3.5.4.tgz#d49d173ccb1c66abbc1e3891fab528400aef1ae2"
   integrity sha512-u/5YDtCoZ4p1crJmK4md2Zh/R8/odk+3X65CVqI/EoZC8T2YiqOQ75Ec62CCpTn8gk1tBZmaAS9sxNDjalLPMw==
