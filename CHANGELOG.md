@@ -1,3 +1,12 @@
+## [1.5.1](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.5.0...v1.5.1) (2021-04-10)
+
+
+### Bug Fixes
+
+* **deps:** pin dependency strapi-helper-plugin to 3.5.4 ([135af47](https://github.com/julienfroidefond/bookmarks-cms/commit/135af477363822ca5c63b86f69cbf1c392275ffe))
+
+
+
 # [1.5.0](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.4.0...v1.5.0) (2021-04-09)
 
 
@@ -52,15 +61,6 @@
 ### Features
 
 * **folders:** tree Api ([e09c61e](https://github.com/julienfroidefond/bookmarks-cms/commit/e09c61e3c18141050d716defe705c08a259682f4))
-
-
-
-# [1.1.0](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.0.1...v1.1.0) (2021-03-30)
-
-
-### Features
-
-* folders model creation ([1326cfd](https://github.com/julienfroidefond/bookmarks-cms/commit/1326cfd7542ddfc2f9dd977445e4322b1b3a1059)), closes [#12](https://github.com/julienfroidefond/bookmarks-cms/issues/12)
 
 
 
