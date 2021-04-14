@@ -1,3 +1,12 @@
+## [1.5.2](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.5.1...v1.5.2) (2021-04-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-sortable-tree to v2.8.0 ([336d583](https://github.com/julienfroidefond/bookmarks-cms/commit/336d583e6863f1613444898301926109d75cd1b2))
+
+
+
 ## [1.5.1](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.5.0...v1.5.1) (2021-04-10)
 
 
@@ -47,20 +56,6 @@
 
 * adding new param on tree API : no_empty_folders ([1b3760a](https://github.com/julienfroidefond/bookmarks-cms/commit/1b3760a283a0e032c88e9f6f2ffae23d7b34908e))
 * **folderstree:** adding a parameter tag_id_in to filter by tag ids ([bf7b1d8](https://github.com/julienfroidefond/bookmarks-cms/commit/bf7b1d88a32d80ee6548273cfe6e79b75906f341))
-
-
-
-# [1.2.0](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.1.0...v1.2.0) (2021-04-02)
-
-
-### Bug Fixes
-
-* **folders:** sanitize before ([09317cf](https://github.com/julienfroidefond/bookmarks-cms/commit/09317cf251ae3d3a76fa2d156e9679152c4d9297))
-
-
-### Features
-
-* **folders:** tree Api ([e09c61e](https://github.com/julienfroidefond/bookmarks-cms/commit/e09c61e3c18141050d716defe705c08a259682f4))
 
 
 
