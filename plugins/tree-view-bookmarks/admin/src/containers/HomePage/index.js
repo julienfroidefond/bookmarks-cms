@@ -20,6 +20,7 @@ const mapFolderTreeItem = (item) => {
     const bookmarksTree = item.bookmarks.map((bookmark) => ({
       title: "📌 " + bookmark.title,
       id: bookmark.id,
+      url: `/admin/plugins/content-manager/collectionType/application::bookmarks.bookmarks/${bookmark.id}`,
       type: "bookmark",
     }));
     children.push(...bookmarksTree);
@@ -27,6 +28,7 @@ const mapFolderTreeItem = (item) => {
   return {
     title,
     children,
+    url: `/admin/plugins/content-manager/collectionType/application::folders.folders/${id}`,
     type: "folder",
     id,
   };
@@ -108,6 +110,17 @@ class HomePage extends Component {
                 !(tree.nextParent && tree.nextParent.type === "bookmark")
               }
               onMoveNode={onMoveNode}
+              generateNodeProps={({ node }) => ({
+                buttons: [
+                  <button
+                    onClick={() => {
+                      window.location.href = node.url;
+                    }}
+                  >
+                    Go to link
+                  </button>,
+                ],
+              })}
             />
           </Block>
         </div>
