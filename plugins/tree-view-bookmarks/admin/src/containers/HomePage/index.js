@@ -3,7 +3,7 @@
  * HomePage
  *
  */
-import SortableTree, { toggleExpandedForAll } from "react-sortable-tree";
+import SortableTree from "react-sortable-tree";
 import "react-sortable-tree/style.css";
 import * as StrapiHelper from "strapi-helper-plugin";
 
@@ -103,15 +103,6 @@ class HomePage extends Component {
             description="Let's drag and drop"
             style={{ marginBottom: 12, height: 700 }}
           >
-            <button
-              onClick={() => {
-                console.log(treeData);
-                const res = toggleExpandedForAll(treeData);
-                console.log(res);
-              }}
-            >
-              Expand
-            </button>
             <SortableTree
               treeData={treeData}
               onChange={(treeData) => changeTree(treeData, this)}
