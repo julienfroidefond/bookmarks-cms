@@ -18,7 +18,7 @@
     "@request/api": "0.6.0",
     "knex": "0.95.4",
     "pg": "8.6.0",
-    "react-sortable-tree": "2.7.1",
+    "react-sortable-tree": "2.8.0",
     "sqlite3": "5.0.2",
     "strapi": "3.6.0",
     "strapi-admin": "3.6.0",
