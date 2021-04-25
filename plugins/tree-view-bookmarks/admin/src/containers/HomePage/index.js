@@ -73,6 +73,16 @@ const onMoveNode = (e) => {
   }
 };
 
+const refreshDatasFull = () => {
+  return StrapiHelper.request("/folders/tree").then((res) => {
+    const foldersTree = res.map((item) => {
+      return mapFolderTreeItem(item);
+    });
+    console.log(foldersTree);
+    return foldersTree;
+  });
+};
+
 class HomePage extends Component {
   componentDidMount() {
     StrapiHelper.request("/folders/tree").then((res) => {
@@ -110,17 +120,84 @@ class HomePage extends Component {
                 !(tree.nextParent && tree.nextParent.type === "bookmark")
               }
               onMoveNode={onMoveNode}
-              generateNodeProps={({ node }) => ({
-                buttons: [
+              generateNodeProps={({ node }) => {
+                let buttons = [
                   <button
                     onClick={() => {
                       window.location.href = node.url;
                     }}
                   >
-                    Go to link
+                    Edit
                   </button>,
-                ],
-              })}
+                ];
+                if (node.type === "folder") {
+                  buttons.push(
+                    <button
+                      onClick={(e) => {
+                        const title = window.prompt("Name of the link?");
+                        const url = window.prompt("Url of the link?");
+                        StrapiHelper.request("/bookmarks", {
+                          method: "POST",
+                          body: {
+                            title,
+                            url,
+                            folders: [node.id],
+                          },
+                        })
+                          .then(async (resp) => {
+                            strapi.notification.success(
+                              "tree-view-bookmarks.notification.success"
+                            );
+                            const treeData = await refreshDatasFull();
+                            this.setState({
+                              treeData,
+                            });
+                          })
+                          .catch((e) => {
+                            strapi.notification.error(
+                              "tree-view-bookmarks.notification.error"
+                            );
+                          });
+                      }}
+                    >
+                      New 📌
+                    </button>
+                  );
+                  buttons.push(
+                    <button
+                      onClick={(e) => {
+                        const name = window.prompt("Name of the folder?");
+                        StrapiHelper.request("/folders", {
+                          method: "POST",
+                          body: {
+                            name,
+                            parent: [node.id],
+                          },
+                        })
+                          .then(async (resp) => {
+                            strapi.notification.success(
+                              "tree-view-bookmarks.notification.success"
+                            );
+                            const treeData = await refreshDatasFull();
+                            this.setState({
+                              treeData,
+                            });
+                          })
+                          .catch((e) => {
+                            strapi.notification.error(
+                              "tree-view-bookmarks.notification.error"
+                            );
+                          });
+                      }}
+                    >
+                      New 🗂
+                    </button>
+                  );
+                }
+                return {
+                  buttons,
+                };
+              }}
             />
           </Block>
         </div>
