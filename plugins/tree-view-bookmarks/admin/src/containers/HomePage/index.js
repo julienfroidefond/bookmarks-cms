@@ -3,12 +3,12 @@
  * HomePage
  *
  */
+import React, { memo, Component } from "react";
 import SortableTree from "react-sortable-tree";
 import "react-sortable-tree/style.css";
 import * as StrapiHelper from "strapi-helper-plugin";
 
-import React, { memo, Component } from "react";
-
+import { Action } from "./component";
 import Block from "../../components/Block";
 
 const mapFolderTreeItem = (item) => {
@@ -38,8 +38,28 @@ const changeTree = (treeData, comp) => {
   comp.setState({ treeData });
 };
 
+const notif = (type) => {
+  if (type === "success") {
+    strapi.notification.toggle({
+      type: "success",
+      message: {
+        id: "tree-view-bookmarks.notification.success",
+        defaultMessage: "Saved!",
+      },
+    });
+  } else {
+    strapi.notification.toggle({
+      type: "warning",
+      message: {
+        id: "tree-view-bookmarks.notification.error",
+        defaultMessage: "Error!",
+      },
+    });
+  }
+};
+
 const onMoveNode = (e) => {
-  console.log(e);
+  // console.log(e);
   console.log(
     `${e.node.type} with id : ${e.node.id} (${e.node.title}) is moving to folder with id : ${e.nextParentNode.id} (${e.nextParentNode.title})`
   );
@@ -52,10 +72,10 @@ const onMoveNode = (e) => {
       },
     })
       .then((resp) => {
-        strapi.notification.success("tree-view-bookmarks.notification.success");
+        notif("success");
       })
       .catch((e) => {
-        strapi.notification.error("tree-view-bookmarks.notification.error");
+        notif("error");
       });
   } else if (e.node.type === "folder") {
     StrapiHelper.request("/folders/" + e.node.id, {
@@ -65,16 +85,108 @@ const onMoveNode = (e) => {
       },
     })
       .then((resp) => {
-        strapi.notification.success("tree-view-bookmarks.notification.success");
+        notif("success");
       })
       .catch((e) => {
-        strapi.notification.error("tree-view-bookmarks.notification.error");
+        notif("error");
       });
   }
 };
 
+const getButtons = (node, comp) => {
+  let buttons = [
+    <Action
+      onClick={() => {
+        window.location.href = node.url;
+      }}
+    >
+      ✏️
+      <br />
+      Edit
+    </Action>,
+    <Action
+      onClick={() => {
+        const path = node.type === "folder" ? "/folders" : "/bookmarks";
+        StrapiHelper.request(`${path}/${node.id}`, {
+          method: "DELETE",
+        })
+          .then(async (resp) => {
+            notif("success");
+            comp.refreshAllData();
+          })
+          .catch((e) => {
+            notif("error");
+          });
+      }}
+    >
+      ❌<br />
+      Remove
+    </Action>,
+  ];
+  if (node.type === "folder") {
+    buttons.push(
+      <Action
+        onClick={() => {
+          const title = window.prompt("Name of the link?");
+          if (!title) return;
+          const url = window.prompt("Url of the link?");
+          if (title && title !== "" && url && url != "") {
+            StrapiHelper.request("/bookmarks", {
+              method: "POST",
+              body: {
+                title,
+                url,
+                folders: [node.id],
+              },
+            })
+              .then(async (resp) => {
+                notif("success");
+                comp.refreshAllData();
+              })
+              .catch((e) => {
+                notif("error");
+              });
+          }
+        }}
+      >
+        📌
+        <br />
+        New
+      </Action>
+    );
+    buttons.push(
+      <Action
+        onClick={() => {
+          const name = window.prompt("Name of the folder?");
+          if (name && name !== "") {
+            StrapiHelper.request("/folders", {
+              method: "POST",
+              body: {
+                name,
+                parent: [node.id],
+              },
+            })
+              .then(async (resp) => {
+                notif("success");
+                comp.refreshAllData();
+              })
+              .catch((e) => {
+                notif("error");
+              });
+          }
+        }}
+      >
+        🗂
+        <br />
+        New
+      </Action>
+    );
+  }
+  return buttons;
+};
+
 class HomePage extends Component {
-  componentDidMount() {
+  refreshAllData() {
     StrapiHelper.request("/folders/tree").then((res) => {
       const foldersTree = res.map((item) => {
         return mapFolderTreeItem(item);
@@ -83,6 +195,9 @@ class HomePage extends Component {
         treeData: foldersTree,
       });
     });
+  }
+  componentDidMount() {
+    this.refreshAllData();
   }
   state = {
     treeData: [],
@@ -111,15 +226,7 @@ class HomePage extends Component {
               }
               onMoveNode={onMoveNode}
               generateNodeProps={({ node }) => ({
-                buttons: [
-                  <button
-                    onClick={() => {
-                      window.location.href = node.url;
-                    }}
-                  >
-                    Go to link
-                  </button>,
-                ],
+                buttons: getButtons(node, this),
               })}
             />
           </Block>
