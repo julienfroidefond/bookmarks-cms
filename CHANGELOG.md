@@ -1,3 +1,13 @@
+# [1.7.0](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.6.0...v1.7.0) (2021-04-26)
+
+
+### Features
+
+* **folder-tree-view:** adding two add actions ([42f030b](https://github.com/julienfroidefond/bookmarks-cms/commit/42f030b9693c9b6768180c472aeaa55fe3001466))
+* **tree-viewer:** adding more actions and refacto a little ([f5fc1d2](https://github.com/julienfroidefond/bookmarks-cms/commit/f5fc1d2c080608e6fe015a4e8af843b6093a9743))
+
+
+
 # [1.6.0](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.5.1...v1.6.0) (2021-04-23)
 
 
@@ -46,21 +56,6 @@
 ### Features
 
 * **foldertree:** hanle orphans ([688f411](https://github.com/julienfroidefond/bookmarks-cms/commit/688f4116d00fdcb6c878906755b672ffb884590e)), closes [#23](https://github.com/julienfroidefond/bookmarks-cms/issues/23)
-
-
-
-# [1.3.0](https://github.com/julienfroidefond/bookmarks-cms/compare/v1.2.0...v1.3.0) (2021-04-03)
-
-
-### Bug Fixes
-
-* eval killing ([bd5a7e4](https://github.com/julienfroidefond/bookmarks-cms/commit/bd5a7e49816d6b308f21314949429c37737a72df))
-
-
-### Features
-
-* adding new param on tree API : no_empty_folders ([1b3760a](https://github.com/julienfroidefond/bookmarks-cms/commit/1b3760a283a0e032c88e9f6f2ffae23d7b34908e))
-* **folderstree:** adding a parameter tag_id_in to filter by tag ids ([bf7b1d8](https://github.com/julienfroidefond/bookmarks-cms/commit/bf7b1d88a32d80ee6548273cfe6e79b75906f341))
 
 
 
