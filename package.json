@@ -16,7 +16,7 @@
   "dependencies": {
     "@purest/config": "1.0.1",
     "@request/api": "0.6.0",
-    "knex": "0.95.4",
+    "knex": "3.1.0",
     "pg": "8.6.0",
     "react-sortable-tree": "2.7.1",
     "sqlite3": "5.0.2",
